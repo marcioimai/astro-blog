@@ -42,13 +42,46 @@ import { SITE_TITLE } from '../../consts';
 		</div>
 	</nav>
 </header>
+
+<script is:inline>
+  const header = document.getElementsByTagName("header")[0];
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    if (scrollY > 0) {
+      header.classList.add("header-sticky");
+    } else {
+      header.classList.remove("header-sticky");
+    }
+  });
+
+</script>
+
 <style>
 	header {
 		margin: 0;
 		padding: 0 1em;
+		position: sticky;
+		top: 0;
+		
+		background: transparent;
+		box-shadow: none;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .3s;
+	}
+
+	@media (max-width: 720px) {
+		header {
+			background: white;
+			box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		}
+	}
+
+	.header-sticky {
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
+
 	h2 {
 		margin: 0;
 		font-size: 1em;
