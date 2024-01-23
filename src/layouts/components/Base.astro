@@ -11,7 +11,11 @@ const { title, description } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title ?? SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
-    <slot name="head" />
+    <style>
+			.no-scroll {
+				overflow: hidden !important;
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
