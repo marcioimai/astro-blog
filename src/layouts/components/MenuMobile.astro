@@ -8,9 +8,9 @@
   <span class="line line3"></span>
 </div>
 <ul id="menu-mobile">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/about">About</a></li>
 </ul>
 
 <script is:inline>
@@ -45,7 +45,7 @@
       display: block;
       height: 26px;
       width: 32px;
-      top: 19px;
+      top: calc((var(--header-height) - 26px) / 2);
       right: 20px;
     }
 

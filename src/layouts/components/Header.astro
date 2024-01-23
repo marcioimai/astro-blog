@@ -32,8 +32,8 @@ import MenuMobile from './MenuMobile.astro';
 		position: sticky;
 		top: 0;
 
-		height: 4rem;
-		max-height: 4rem;
+		height: var(--header-height);
+		max-height: var(--header-height);
 		display: flex;
 		
 		background: transparent;
@@ -66,7 +66,7 @@ import MenuMobile from './MenuMobile.astro';
 	.logo {
 		text-decoration: none;
 		color: var(--black);
-		font-size: 1rem;
+		/* font-size: 1rem; */
 		font-weight: bold;
 		z-index: 999;
 
