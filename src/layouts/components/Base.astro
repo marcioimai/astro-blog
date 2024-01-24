@@ -11,6 +11,7 @@ const { title, description } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title ?? SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
 			.no-scroll {
 				overflow: hidden !important;
@@ -21,5 +22,22 @@ const { title, description } = Astro.props;
 		<Header />
     <slot />
 		<Footer />
+
+		<script>
+			declare global {
+				interface Window {
+					netlifyIdentity: any;
+				}
+			}
+			if (window.netlifyIdentity) {
+				window.netlifyIdentity.on("init", (user: any) => {
+					if (!user) {
+						window.netlifyIdentity.on("login", () => {
+							document.location.href = "/admin/";
+						});
+					}
+				});
+			}
+		</script>
 	</body>
 </html>
