@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 
 const homepage = defineCollection({
-  type: 'data',
+  type: 'content',
   schema: z.object({
     title: z.string(),
   }),
