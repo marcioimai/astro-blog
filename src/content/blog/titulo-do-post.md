@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: Titulo do post
 description: Descrição do post gfgsdfgsdfgfg
 pubDate: '2024-01-24T08:52:28-04:00'
